@@ -31,7 +31,7 @@ int main()
 	return 0;
 }
 
-//³õÊ¼»¯Êı×é 
+//åˆå§‹åŒ–æ•°ç»„ 
 int *ini(int *arr) {
 	int *parr;
 	
@@ -47,11 +47,11 @@ int *ini(int *arr) {
 	
 }
 
-//²åÈë 
+//æ’å…¥ 
 int *insArr(int *arr, int posi, int val) {
 	int j;
 	if (posi < 1 || posi >= MaxSize-1) {
-		 printf("Ô½½ç");
+		 printf("è¶Šç•Œ");
 		 return (0);
 	}
 	
@@ -63,10 +63,10 @@ int *insArr(int *arr, int posi, int val) {
 	return arr;
 }
 
-//É¾³ı 
+//åˆ é™¤ 
 int *delArr(int *arr, int posi) {
 	if (posi < 1 || posi > MaxSize -1) {
-		printf("Ô½½ç");
+		printf("è¶Šç•Œ");
 	 return (0);
 	}
 	

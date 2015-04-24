@@ -6,11 +6,11 @@ struct NodeList{
 	struct NodeList *next;
 };
 
-NodeList *initHead(NodeList *head); //´´½¨Í·½Úµã 
+NodeList *initHead(NodeList *head); //åˆ›å»ºå¤´èŠ‚ç‚¹ 
 
-NodeList *createList(NodeList *head);  //³õÊ¼»¯µ¥Á´±í
+NodeList *createList(NodeList *head);  //åˆå§‹åŒ–å•é“¾è¡¨
 
-NodeList *insNode(NodeList *head, int posi, int ele); //²åÈë  
+NodeList *insNode(NodeList *head, int posi, int ele); //æ’å…¥  
 
 int main()
 {
@@ -18,10 +18,10 @@ int main()
 	int flag = 1;
 	int insChar, insPosi, count;
 	
-	insPosi = 3; //²åÈëÎ»ÖÃ 
-	insChar = 9; //²åÈëÖµ 
+	insPosi = 3; //æ’å…¥ä½ç½® 
+	insChar = 9; //æ’å…¥å€¼ 
 	
-	count = 1; //¼ÆÊýÆ÷ 
+	count = 1; //è®¡æ•°å™¨ 
 	
 	head = initHead(&node);
 	
@@ -30,20 +30,20 @@ int main()
 	createListHead = list; 
 	
 	while(list->next){
-		printf("%d ---- ½ÚµãÊý¾ÝÓò ", list->next->data);
-		printf("%p ---- ½Úµã±¾ÉíµØÖ· ", list->next);
-		printf("%p ---- ½ÚµãÖ¸ÏòµØÖ· \n", list->next->next);
+		printf("%d ---- èŠ‚ç‚¹æ•°æ®åŸŸ ", list->next->data);
+		printf("%p ---- èŠ‚ç‚¹æœ¬èº«åœ°å€ ", list->next);
+		printf("%p ---- èŠ‚ç‚¹æŒ‡å‘åœ°å€ \n", list->next->next);
 		list = list->next;
 	}
 	
-	printf("\n%s\n", "Í·²å·¨×Ô¶¯Éú³ÉÁ´±í");
+	printf("\n%s\n", "å¤´æ’æ³•è‡ªåŠ¨ç”Ÿæˆé“¾è¡¨");
 	
 	insBefore = insNode(createListHead, insPosi, insChar);
 
 	while(insBefore->next){
-		printf("%d ---- ½ÚµãÊý¾ÝÓò ", insBefore->next->data);
-		printf("%p ---- ½Úµã±¾ÉíµØÖ· ", insBefore->next);
-		printf("%p ---- ½ÚµãÖ¸ÏòµØÖ· \n", insBefore->next->next);
+		printf("%d ---- èŠ‚ç‚¹æ•°æ®åŸŸ ", insBefore->next->data);
+		printf("%p ---- èŠ‚ç‚¹æœ¬èº«åœ°å€ ", insBefore->next);
+		printf("%p ---- èŠ‚ç‚¹æŒ‡å‘åœ°å€ \n", insBefore->next->next);
 		
 		insBefore = insBefore->next;
 	}
@@ -59,7 +59,7 @@ NodeList *initHead(NodeList *head) {
 NodeList *createList(NodeList *head){
 	NodeList *p, *newNode;
 	
-	//Í·Ö¸Õë´¢´æÁ´±í³¤¶È
+	//å¤´æŒ‡é’ˆå‚¨å­˜é“¾è¡¨é•¿åº¦
 	head->data = 10;  
 	p = head;
 	
@@ -81,7 +81,7 @@ NodeList *createList(NodeList *head){
 
 NodeList *insNode(NodeList *head, int posi, int ele) {
 	if (posi < 1 || posi > head->data){
-		printf("%s", "Ô½½ç"); 
+		printf("%s", "è¶Šç•Œ"); 
 		return 0;
 	}
 

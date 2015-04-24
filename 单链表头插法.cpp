@@ -17,7 +17,7 @@ int main()
 	
 	head = initHead(&he);
 	
-	printf("Í·½ÚµãÖ¸ÕëÓò%p\n", head->next);
+	printf("å¤´èŠ‚ç‚¹æŒ‡é’ˆåŸŸ%p\n", head->next);
 	
 	while (flag) {
 		scanf("%c", &inChar);
@@ -28,8 +28,8 @@ int main()
 		  p->next = head->next;
 		  printf("111%p\n", head->next);
 		  head->next = p;
-			printf("ÐÂ½¨½ÚµãÊý¾ÝÓò%c\n", p->data);
-			printf("ÐÂ½¨½ÚµãÖ¸ÕëÓò%p\n", p->next);
+			printf("æ–°å»ºèŠ‚ç‚¹æ•°æ®åŸŸ%c\n", p->data);
+			printf("æ–°å»ºèŠ‚ç‚¹æŒ‡é’ˆåŸŸ%p\n", p->next);
 			 printf("ccc%p\n", head->next);
 		} else {
 			while (head->next) {
