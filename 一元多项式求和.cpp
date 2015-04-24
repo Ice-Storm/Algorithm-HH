@@ -3,12 +3,12 @@
 #include <malloc.h>
 
 struct Data {
-	int index;//Ö¸Êý
-	int frequency; //´ÎÊý 
+	int index;//æŒ‡æ•°
+	int frequency; //æ¬¡æ•° 
 	struct Data *next;
 };
 
-//Ò»Ôª¶àÏîÊ½ÇóºÍ 
+//ä¸€å…ƒå¤šé¡¹å¼æ±‚å’Œ 
 int main() {
 	int inIndex, inFrequency;
 	int flag = 1, count = 1;
@@ -17,13 +17,13 @@ int main() {
 	
 	headPoint = (&head);
 	
-	printf("%s\n", "ÊäÈërÇóºÍ");
+	printf("%s\n", "è¾“å…¥ræ±‚å’Œ");
 	
-	//¸ù¾ÝÊäÈëµÄÏµÊýºÍÖ¸Êý Éú³ÉÁ´±í 
+	//æ ¹æ®è¾“å…¥çš„ç³»æ•°å’ŒæŒ‡æ•° ç”Ÿæˆé“¾è¡¨ 
 	while (flag) {
-		printf("%s", "ÊäÈë¶àÏîÊ½ÏµÊý");
+		printf("%s", "è¾“å…¥å¤šé¡¹å¼ç³»æ•°");
 		scanf("%d", &inFrequency); 
-		printf("%s", "ÊäÈë¶àÏîÊ½Ö¸Êý");
+		printf("%s", "è¾“å…¥å¤šé¡¹å¼æŒ‡æ•°");
 		scanf("%d", &inIndex); 
 		
 		if(inIndex == 0 && inFrequency == 0) {
@@ -52,13 +52,13 @@ int main() {
 	tempHeadPoint = headPoint;
 	
 	while(tempHeadPoint->next){
-		printf("\n%d ---- ½ÚµãÊý¾ÝÓò ", tempHeadPoint->next->frequency);
-		printf("\n%d ---- ½ÚµãÊý¾ÝÓò ", tempHeadPoint->next->index);
-		printf("\n%p ---- ½Úµã±¾ÉíµØÖ· ", tempHeadPoint->next);
+		printf("\n%d ---- èŠ‚ç‚¹æ•°æ®åŸŸ ", tempHeadPoint->next->frequency);
+		printf("\n%d ---- èŠ‚ç‚¹æ•°æ®åŸŸ ", tempHeadPoint->next->index);
+		printf("\n%p ---- èŠ‚ç‚¹æœ¬èº«åœ°å€ ", tempHeadPoint->next);
 		tempHeadPoint = tempHeadPoint->next;
 	}
 	
-	//ÇóºÍ
+	//æ±‚å’Œ
 	int x = 3;
 	float temp, sum;
 	
@@ -70,7 +70,7 @@ int main() {
 		headPoint = headPoint->next;
 	}
 	
-	printf("½á¹û -- \n%lf", sum); 
+	printf("ç»“æžœ -- \n%lf", sum); 
 	
 	return (0);
 	 
