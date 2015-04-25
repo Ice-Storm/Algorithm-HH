@@ -34,6 +34,8 @@ int main()
 	NodeList *p;
 	
 	pre = NULL;
+	
+	//逆置不好想，还是头插法逆置好
 
 	p = createListHead->next; //第一个结点 
 	while(p) {
