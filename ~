@@ -1,0 +1,8 @@
+#include <stdio.h>
+#include <malloc.h> 
+int main(int argc, char *argv[])
+{
+	//for (int i = 0; i < 1E10)
+	printf("%d", 1E5);
+	return 0;
+}

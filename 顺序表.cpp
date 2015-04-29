@@ -51,7 +51,7 @@ int *ini(int *arr) {
 int *insArr(int *arr, int posi, int val) {
 	int j;
 	if (posi < 1 || posi >= MaxSize-1) {
-		 printf("越界");
+		 printf("%s", "越界");
 		 return (0);
 	}
 	

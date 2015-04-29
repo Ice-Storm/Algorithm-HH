@@ -8,34 +8,28 @@ struct NodeList{
 
 NodeList *initHead(NodeList *head);
 
+NodeList *list(NodeList *head, char inChar);  //¸ù¾ÝÊäÈë´´½¨Á´±í 
+
+void printList(NodeList *head); //±éÀúÊä³öÁ´±í 
+
 int main()
 {
-	NodeList *head, *p;
+	NodeList *head;
 	NodeList he;
 	char inChar;
 	int flag = 1;
 	
 	head = initHead(&he);
 	
-	printf("å¤´èŠ‚ç‚¹æŒ‡é’ˆåŸŸ%p\n", head->next);
+	printf("Í·Ö¸ÕëÖ¸ÕëÓò%p\n", head->next);
 	
 	while (flag) {
 		scanf("%c", &inChar);
 		getchar();
 		if(inChar != 'q') {
-		 	p = (NodeList *)malloc(sizeof(NodeList));
-		  p->data = inChar;
-		  p->next = head->next;
-		  printf("111%p\n", head->next);
-		  head->next = p;
-			printf("æ–°å»ºèŠ‚ç‚¹æ•°æ®åŸŸ%c\n", p->data);
-			printf("æ–°å»ºèŠ‚ç‚¹æŒ‡é’ˆåŸŸ%p\n", p->next);
-			 printf("ccc%p\n", head->next);
+	  	head = list(head, inChar);
 		} else {
-			while (head->next) {
-				printf("%c", head->next->data);
-				head = head->next;
-			}
+			printList(head);
 			flag = 0;
 		}
 	}
@@ -45,4 +39,21 @@ int main()
 NodeList *initHead(NodeList *head) {
 	head -> next = NULL;
 	return head;
+}
+
+NodeList *list(NodeList *head, char inChar) {
+	NodeList *node;
+	node = (NodeList *)malloc(sizeof(NodeList));
+	node->data = inChar;
+	node->next = head->next;
+	head->next = node;
+	return head;
+}
+
+void printList(NodeList	*head) {
+	NodeList *firstNode = head->next;
+	while(firstNode) {
+		printf("%c", firstNode->data);
+		firstNode = firstNode->next; 
+	}
 }
