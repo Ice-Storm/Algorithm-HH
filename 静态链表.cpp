@@ -7,11 +7,9 @@ typedef struct {
 	int cur;
 }staticList, NodeList[MAXSIZE];
 
-int initStaticList(NodeList staticList);  //³õÊ¼»¯¾²Ì¬Á´±í 
+int initStaticList(NodeList staticList);  //åˆå§‹åŒ–é™æ€é“¾è¡¨ 
 
-int mallocStaticListNode(NodeList staticList, int inChar); //²åÈëÔªËØ 
-
-int delStaticLIstNode(NodeList staticList, int i); //É¾³ı¾²Ì¬Á´±íÔªËØ 
+int mallocStaticListNode(NodeList staticList, int inChar); //æ’å…¥å…ƒç´  
 
 int main(int argc, char *argv[]){
 	
@@ -20,14 +18,11 @@ int main(int argc, char *argv[]){
 	initStaticList(staticList);
 	
 	
-	for (int i =0; i < 10; i++) { //²âÊÔ¾²Ì¬Á´±íÒÑÂú²åÈëÊ§°Ü 
+	for (int i =0; i < 105; i++) { //æµ‹è¯•é™æ€é“¾è¡¨å·²æ»¡æ’å…¥å¤±è´¥ 
 		printf("%d\n", i);
 		mallocStaticListNode(staticList, i);
 	}
-	delStaticLIstNode(staticList, 22);
-	printf("%d\n", staticList[22].cur);
-	
-	
+	printf("%d\n", staticList[0].cur);
 	
 	return (0);
 }
@@ -41,12 +36,11 @@ int initStaticList(NodeList staticList){
 } 
 
 int mallocStaticListNode(NodeList staticList, int inChar){
-	int freeCur;  //Ö¸Ïò¾²Ì¬Á´±í¿ÉÓÃ½Úµã 
-	staticList[0].data = 1;
+	int freeCur;  //æŒ‡å‘é™æ€é“¾è¡¨å¯ç”¨èŠ‚ç‚¹ 
 	freeCur = staticList[0].cur;
 	
-	if (freeCur == MAXSIZE-1) { //¾²Ì¬Á´±íÒÑÂú²åÈëÊ§°Ü 
-		printf("%s", "¾²Ì¬Á´±íÒÑÂú");
+	if (freeCur == MAXSIZE-1) { //é™æ€é“¾è¡¨å·²æ»¡æ’å…¥å¤±è´¥ 
+		printf("%s", "é™æ€é“¾è¡¨å·²æ»¡");
 		return 0;
 	} 
 	
@@ -54,32 +48,3 @@ int mallocStaticListNode(NodeList staticList, int inChar){
 	staticList[0].cur = staticList[freeCur].cur;	
 	return 0;
 }
-
-int delStaticLIstNode(NodeList staticList, int i) {
-	int temp = 0;
-	int j = 0;
-	int pre = 0;
-	
-	if (i < 1 || i > MAXSIZE - 1) {
-		printf("²åÈëÎ»ÖÃÔ½½ç");
-		return 0;
-	}
-	
-	while(staticList[j].cur) {
-		pre = j;
-		j++;
-		if (j == i) {
-			break;
-		}	
-	}
-	
-	/*
-	 *  Ö¸Õë¸Ä±äÁ½´Î£¬Ò»´ÎÊÇ¿ÕÏĞÖ¸Õë£¬Ò»´ÎÊÇÊı¾İÖ¸Õë 
-	 *  Ó¦¸Ã·Ö³ÉÁ½ÌõÏß£¬·ÖÖÎ 
-	 */
-	
-	temp = staticList[0].cur;
-	staticList[pre].cur =	staticList[i].cur;
-	staticList[i].cur = temp;
- 	staticList[0].cur = j;
-} 
