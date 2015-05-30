@@ -5,7 +5,7 @@ struct list {
 	struct list *next;
 };
 
-// i Éú³É»·Î»ÖÃ £¬ n Éú³É½Úµã¸öÊı
+// i ç”Ÿæˆç¯ä½ç½® ï¼Œ n ç”ŸæˆèŠ‚ç‚¹ä¸ªæ•°
 struct list *createCirList(int i, int n);
 
 int judge(struct list *head);
@@ -27,13 +27,13 @@ struct list *createCirList(int i, int n) {
 	int j;
 
 	if (i < 0 || i > n) {
-		printf("Éú³É»·´íÎó£¬Ô½½ç");
+		printf("ç”Ÿæˆç¯é”™è¯¯ï¼Œè¶Šç•Œ");
 		return 0;
 	}
 
 	cur = head;
 
-	//Éú³ÉÓĞ»·Á´±í
+	//ç”Ÿæˆæœ‰ç¯é“¾è¡¨
 	for (j = 1; j <= n; j++){
 		node = (struct list*)malloc(sizeof(struct list));
 
@@ -66,20 +66,20 @@ int judge(struct list *head) {
 		cur = quickP;
 		quickP = quickP->next;
 		quickCount++;
-		printf("\n¿ìÖ¸ÕëÎ»ÖÃ%d", quickCount);
+		printf("\nå¿«æŒ‡é’ˆä½ç½®%d", quickCount);
 
 		while(1) {
 
 			slowP = slowP->next;
 			slowCount++;
-			printf("\nÂıÖ¸ÕëÒÆ¶¯%d", slowCount);
+			printf("\næ…¢æŒ‡é’ˆç§»åŠ¨%d", slowCount);
 
 
 			if(slowP == quickP && quickCount != slowCount) {
-				printf("\n\n»·ÔÚµÚ%d¸ö½Úµã\n", slowP->data);
+				printf("\n\nç¯åœ¨ç¬¬%dä¸ªèŠ‚ç‚¹\n", slowP->data);
 				return 0;
 			} else if(slowP == quickP && quickCount == slowCount) {
-				printf("\nÂıÖ¸Õë×ßÁË%d´Î\n\n", slowP->data);
+				printf("\næ…¢æŒ‡é’ˆèµ°äº†%dæ¬¡\n\n", slowP->data);
 				slowCount = 0;
 				slowP = head->next;
 				break;
@@ -90,11 +90,4 @@ int judge(struct list *head) {
 
 	return 0;
 }
-
-
-
-
-
-
-
 
