@@ -86,9 +86,3 @@ struct list *magicStart(struct list* head){
 
 };
 
-
-
-
-
-
-
