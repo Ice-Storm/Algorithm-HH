@@ -46,7 +46,7 @@ struct stack push(struct stack s, int n){
     s.base = (int*)realloc(s.base, (MAX_STACK_SIZE + 1) * sizeof(int));
     printf("%p*******\n", s.base);
     if(!s.base) {
-      printf("---%s---\n", "¶¯Ì¬ÔöÈİ");
+      printf("---%s---\n", "åŠ¨æ€å¢å®¹");
       s.stackSize++;
 
       printf("---!%p!---\n", s.top);
@@ -58,7 +58,7 @@ struct stack push(struct stack s, int n){
       return s;
     } else {
 
-      printf("%s*******\n", "mallocÊ§°Ü");
+      printf("%s*******\n", "mallocå¤±è´¥");
       exit(1);
     }
 

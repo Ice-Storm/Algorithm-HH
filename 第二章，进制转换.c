@@ -19,23 +19,23 @@ int main(int argc, char *argv)
 
   stackExp = &p;
 
-  stackExp->top = 0; //³õÊ¼»¯Õ»¶¥Ö¸Õë
+  stackExp->top = 0; //åˆå§‹åŒ–æ ˆé¡¶æŒ‡é’ˆ
 
-  printf("%s", "ÇëÊä³ö¶ş½øÖÆÊı(ÊäÈë999×÷Îª½áÊø·û)\n");
+  printf("%s", "è¯·è¾“å‡ºäºŒè¿›åˆ¶æ•°(è¾“å…¥999ä½œä¸ºç»“æŸç¬¦)\n");
   scanf("%d", &n);
   while(n != 999) {
     push(stackExp, n);
     scanf("%d", &n);
   }
 
-  printf("%s", "ÄãÊäÈëµÄ¶ş½øÖÆÊıÊÇ");
+  printf("%s", "ä½ è¾“å…¥çš„äºŒè¿›åˆ¶æ•°æ˜¯");
   for(i = 0; i < stackExp->top; i++) {
     printf("%d", stackExp->data[i]);
   }
 
   sum = calculate(stackExp);
 
-  printf("\n×ª»»ÎªÊ®½øÖÆÊÇ%d", sum);
+  printf("\nè½¬æ¢ä¸ºåè¿›åˆ¶æ˜¯%d", sum);
 
 
 	return 0;
@@ -43,7 +43,7 @@ int main(int argc, char *argv)
 
 void push(stack *s, int n){
   if(s->top >= MAX_STACK_SIZE) {
-    printf("%s %d", "Õ»Âú,×î´óÊäÈëÎ»Êı", MAX_STACK_SIZE);
+    printf("%s %d", "æ ˆæ»¡,æœ€å¤§è¾“å…¥ä½æ•°", MAX_STACK_SIZE);
     exit(0);
   }
 
@@ -63,16 +63,8 @@ int calculate(stack *s){
     count++;
   }
 
-  sum--;     // 0µÄ0´Î·½ÊÇ1£¬ËùÒÔ½á¹û¼õÒ»
+  sum--;     // 0çš„0æ¬¡æ–¹æ˜¯1ï¼Œæ‰€ä»¥ç»“æœå‡ä¸€
 
   return sum;
 
 }
-
-
-
-
-
-
-
-

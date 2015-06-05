@@ -31,16 +31,16 @@ int main(int argc, char *argv[])
 }
 
 /*
- *  Õ»µÄ×î´ósizeÊÇ10£¬ ¼´ 0-9
- *  µ±Õ»ÂúÊ±£¬Õ»¶¥Ö¸ÕëÖ¸Ïò 10
+ *  æ ˆçš„æœ€å¤§sizeæ˜¯10ï¼Œ å³ 0-9
+ *  å½“æ ˆæ»¡æ—¶ï¼Œæ ˆé¡¶æŒ‡é’ˆæŒ‡å‘ 10
  *
- *  µ±µ¯Õ»Ê±£¬ÏÈ½«Õ»¶¥Ö¸Õë¼õ1£¬È»ºóÊÍ·Å¿Õ¼ä
+ *  å½“å¼¹æ ˆæ—¶ï¼Œå…ˆå°†æ ˆé¡¶æŒ‡é’ˆå‡1ï¼Œç„¶åŽé‡Šæ”¾ç©ºé—´
  *
  */
 
 struct stack push(struct stack s, int n){
   if(s.top >= MAX_STACK_SIZE) {
-    printf("%s", "Õ»Âú");
+    printf("%s", "æ ˆæ»¡");
     return s;
   }
 
@@ -53,7 +53,7 @@ struct stack push(struct stack s, int n){
 
 struct stack pop(struct stack s){
   if(s.top <= 0) {
-    printf("%s\n", "Õ»¿Õ");
+    printf("%s\n", "æ ˆç©º");
     return s;
   }
 
