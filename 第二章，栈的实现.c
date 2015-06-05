@@ -26,8 +26,10 @@ int main(int argc, char *argv[])
     printf("%d\n", stackExp.data[10]);
     stackExp = pop(stackExp);
   }
+  
   printf("%d\n", stackExp.data[0]);
-	return 0;
+  
+  return 0;
 }
 
 /*
