@@ -13,8 +13,6 @@ stack *push(stack *s, int n);
 
 int pop(stack *s);
 
-void calculate(stack *s, int *count);
-
 int main(int argc, char *argv[])
 {
   stack *stackExp, p;
