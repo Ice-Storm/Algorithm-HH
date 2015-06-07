@@ -5,8 +5,8 @@
 #define MAX_STACK_SIZE 20
 
 typedef struct {
-	int data[MAX_STACK_SIZE];
-	int top;
+  int data[MAX_STACK_SIZE];
+  int top;
 }stack;
 
 stack *push(stack *s, int n);
