@@ -13,6 +13,13 @@ SearchTree CreateSearchTree( ElementType X )
 
   S = malloc(sizeof(struct TreeNode));
 
+  S = malloc(sizeof(struct TreeNode));
+
+  if( S == NULL ){
+    printf("%s", "申请空间失败");
+    return NULL;
+  }
+
   S->Element = X;
   S->Left = S->Right = NULL;
 
